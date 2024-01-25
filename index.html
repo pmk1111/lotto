@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>로또번호생성</title>
+    <link rel="icon" href="img/logo.png">
+    <link rel="stylesheet" href="lotto.css">
+  </head>
+  <body class="lite">
+    <nav class="nav_bar nav_lite">
+      <div class="nav_container">
+        <div class="owner_text_container">
+          <img class="logo" src="img/logo_white.svg" alt="" />
+        </div>
+        <div class="title_container">
+          <h1 class="title_text">로또번호생성</h1>
+        </div>
+        <div class="toggle_container">
+          <label class="toggleSwitch">
+            <span class="toggleButton">
+              <img class="display_mode_icon" src="img/sun.png" />
+            </span>
+          </label>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <div class="main_container">
+        <div class="lotto_machine_container">
+          <img class="lotto_machine" src="img/lotto_machine.png" />
+        </div>
+        <div class="btn_container">
+          <button type="button" class="num_generate_btn btn_lite">
+            생성하기
+          </button>
+        </div>
+        <div class="lotto_container">
+          <div class="top_bg"><span>생성된 번호</span></div>
+          <div class="lotto_num_container">
+            <div class="lotto_num_wrap"><span class="lotto_num"></span></div>
+            <div class="lotto_num_wrap"><span class="lotto_num"></span></div>
+            <div class="lotto_num_wrap"><span class="lotto_num"></span></div>
+            <div class="lotto_num_wrap"><span class="lotto_num"></span></div>
+            <div class="lotto_num_wrap"><span class="lotto_num"></span></div>
+            <div class="lotto_num_wrap"><span class="lotto_num"></span></div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="lotto.js"></script>
+  </body>
+</html>
