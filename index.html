@@ -3,9 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="자동으로 로또번호를 생성하세요!">
     <title>로또번호생성</title>
     <link rel="icon" href="img/logo.png">
     <link rel="stylesheet" href="lotto.css">
+    <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
   </head>
   <body class="lite">
     <nav class="nav_bar nav_lite">
@@ -14,7 +16,7 @@
           <img class="logo" src="img/logo_white.svg" alt="" />
         </div>
         <div class="title_container">
-          <h1 class="title_text">로또번호생성</h1>
+          <h1 class="title_text">로또번호생성기</h1>
         </div>
         <div class="toggle_container">
           <label class="toggleSwitch">
@@ -47,6 +49,20 @@
             <div class="lotto_num_wrap"><span class="lotto_num"></span></div>
           </div>
         </div>
+        <div>
+          <a class="check_jackpot" href="https://dhlottery.co.kr/gameResult.do?method=byWin">당첨 번호 확인하기</a>
+        </div>
+        <div class="share_container">
+          <div class="share_content">
+            <a id="btnTwitter" class="link-icon twitter" href="javascript:shareTwitter();" ><img src="img/icon-twitter.png"></a>
+          </div>
+          <div class="share_content">
+            <a id="btnFacebook" class="link-icon facebook" href="javascript:shareFacebook();"><img src="img/icon-facebook.png"></a>   
+          </div>
+          <div class="share_content">
+            <a id="btnKakao" class="link-icon kakao" href="javascript:shareKakao();"><img src="img/icon-kakao.png"></a>  
+          </div>
+      </div>
       </div>
     </main>
 

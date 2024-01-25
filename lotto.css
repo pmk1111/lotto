@@ -251,3 +251,29 @@ main {
     transform: rotate(-1deg);
   }
 }
+
+.check_jackpot{
+  text-decoration: none;
+}
+
+.check_jackpot:hover{
+
+  opacity: .8;
+  transition: .2s;
+}
+
+
+.share_container{
+  display: flex;
+  align-items: center;
+}
+.share_content{
+  display: flex;
+  justify-content: center;
+}
+
+
+.link-icon { position: relative; display: flex; justify-content: center; width: 60px; font-size: 14px; font-weight: 500; color: #333;  padding: 20px 0 20px 0; }
+.link-icon.twitter {background-repeat: no-repeat;}
+.link-icon.facebook {background-repeat: no-repeat;} 
+.link-icon.kakao {background-repeat: no-repeat;}

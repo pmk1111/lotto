@@ -97,3 +97,35 @@ LottogenerateBtn.addEventListener("click", async function () {
   lottoContainer.classList.remove("vibration");
   generating = false; // 생성 완료 후 플래그를 비활성화
 });
+
+function shareTwitter() {
+  var sendText = "복권번호생성기"; // 전달할 텍스트
+  var sendUrl = "https://lotto-generate.netlify.app/"; // 전달할 URL
+  window.open("https://twitter.com/intent/tweet?text=" + sendText + "&url=" + sendUrl);
+}
+
+function shareFacebook() {
+  var sendUrl = "https://lotto-generate.netlify.app/"; // 전달할 URL
+  window.open("http://www.facebook.com/sharer/sharer.php?u=" + sendUrl);
+}
+
+function shareKakao() {
+
+  // 사용할 앱의 JavaScript 키 설정
+  Kakao.init('6f5ea40ee55ec91e85fefece59d53254');
+
+  // 카카오링크 버튼 생성
+  Kakao.Link.createDefaultButton({
+    container: '#btnKakao', // 카카오공유버튼ID
+    objectType: 'feed',
+    content: {
+      title: "로또번호생성기", // 보여질 제목
+      description: "자동으로 로또번호를 생성하세요!", // 보여질 설명
+      imageUrl: "https://lotto-generate.netlify.app/", // 콘텐츠 URL
+      link: {
+         mobileWebUrl: "https://lotto-generate.netlify.app/",
+         webUrl: "https://lotto-generate.netlify.app/"
+      }
+    }
+  });
+}
