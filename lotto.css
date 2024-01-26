@@ -277,3 +277,26 @@ main {
 .link-icon.twitter {background-repeat: no-repeat;}
 .link-icon.facebook {background-repeat: no-repeat;} 
 .link-icon.kakao {background-repeat: no-repeat;}
+
+.rule_container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+.rule_container h4{
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.rule_table{ width: 480px; border-collapse: collapse;}
+.rule_table th, td{
+  border: 1px solid #c6d7e6;
+  text-align: center;
+  height: 30px;
+}
+
+.rule_table th{
+  background-color: #c6d7e6;
+}

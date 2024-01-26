@@ -44,7 +44,7 @@
           </button>
         </div>
         <div class="lotto_container">
-          <div class="top_bg"><span>생성된 번호</span></div>
+          <div class="top_bg"><span>생성된 번호가 여기에 표시됩니다.</span></div>
           <div class="lotto_num_container">
             <div class="lotto_num_wrap"><span class="lotto_num"></span></div>
             <div class="lotto_num_wrap"><span class="lotto_num"></span></div>
@@ -54,9 +54,38 @@
             <div class="lotto_num_wrap"><span class="lotto_num"></span></div>
           </div>
         </div>
-        <div>
-          <a class="check_jackpot" href="https://dhlottery.co.kr/gameResult.do?method=byWin">당첨 번호 확인하기</a>
+        <div class="rule_container">
+          <h4>동행 복권 규칙</h4>
+          <table class="rule_table">
+            <tr>
+              <th>등수</th>
+              <th>당첨 조건</th>
+            </tr>
+            <tr>
+              <td>1등</td>
+              <td>당첨번호 6개 숫자일치</td>
+            </tr>
+            <tr>
+              <td>2등</td>
+              <td>당첨번호 5개 숫자일치
+                +보너스 숫자일치</td>
+            </tr>
+            <tr>
+              <td>3등</td>
+              <td>당첨번호 5개 숫자일치</td>
+            </tr>
+            <tr>
+              <td>4등</td>
+              <td>당첨번호 4개 숫자일치</td>
+            </tr>
+            <tr>
+              <td>5등</td>
+              <td>당첨번호 3개 숫자일치</td>
+            </tr>
+          </table>
         </div>
+        <br>
+        <h4>친구에게 공유하기</h4>
         <div class="share_container">
           <div class="share_content">
             <a id="btnTwitter" class="link-icon twitter" href="javascript:shareTwitter();" ><img src="img/icon-twitter.png"></a>
@@ -68,7 +97,10 @@
             <a id="btnKakao" class="link-icon kakao" href="javascript:shareKakao();"><img src="img/icon-kakao.png"></a>  
           </div>
         </div>
+
+        
       </div>
+
     </main>
 
     <script src="lotto.js"></script>
