@@ -18,6 +18,7 @@ const td = document.querySelectorAll("table tr td");
 const footer = document.querySelector("footer");
 const menuBtn = document.querySelector(".menu_btn");
 const menu = document.querySelector(".menu");
+const menuLink = document.querySelectorAll(".menu_container a");
 
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -51,6 +52,10 @@ toggleList.forEach(($toggle) => {
 
       menuBtn.classList.remove("menu_btn_dark");
       menu.classList.remove("menu_dark");
+      for(item of menuLink){
+        item.classList.remove("link_dark");
+      }
+
       footer.classList.remove("footer_dark");
     } else {
       $toggle.classList.add("active");
@@ -76,6 +81,10 @@ toggleList.forEach(($toggle) => {
 
       menuBtn.classList.add("menu_btn_dark");
       menu.classList.add("menu_dark");
+      for(item of menuLink){
+        item.classList.add("link_dark");
+      }
+
       footer.classList.add("footer_dark");
     }
   };
