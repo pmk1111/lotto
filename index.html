@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="자동으로 로또번호를 생성하세요!">
     <title>로또번호생성</title>
-    <link rel="icon" href="img/logo.png">
+    <link rel="icon" href="images/logo.png">
     <link rel="stylesheet" href="lotto.css">
     <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 
@@ -13,12 +13,18 @@
     <meta name="google-site-verification" content="kW09c0DK4xDTGSGAAOdQK3UgPYERortrtnP8bLnjeZ8" />
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2866511897521551"
      crossorigin="anonymous"></script>
+     <style>
+      #Accordion_wrap{
+        position: fixed !important;
+        width: 100%;
+      }
+     </style>
   </head>
   <body class="lite">
     <nav class="nav_bar nav_lite">
       <div class="nav_container">
         <div class="owner_text_container">
-          <img class="logo" src="img/logo_white.svg" alt="" />
+          <img class="logo" src="images/logo_white.svg" alt="" />
         </div>
         <div class="title_container">
           <h1 class="title_text">로또번호생성기</h1>
@@ -26,17 +32,48 @@
         <div class="toggle_container">
           <label class="toggleSwitch">
             <span class="toggleButton">
-              <img class="display_mode_icon" src="img/sun.png" />
+              <img class="display_mode_icon" src="images/sun.png" />
             </span>
           </label>
         </div>
       </div>
     </nav>
 
+    <!-- menu -->
+    <div id="Accordion_wrap">
+      <div class="menu">
+        <div class="menu_container">
+          <div class="menu_content">
+            <p class="content_type">금융/수학</p>
+            <ul class="content_list">
+              <li><a>간편 복리 계산기</a></li>
+              <li><a>공학용 계산기</a></li>
+            </ul>
+          </div>
+          <div class="menu_content">
+            <p class="content_type">음향/음악</p>
+            <ul class="content_list">
+              <li><a>가청 주파수 테스트</a></li>
+              <li><a>절대음감 테스트</a></li>
+            </ul>
+          </div>
+          <div class="menu_content">
+            <p class="content_type">기타</p>
+            <ul class="content_list">
+              <li><a>로또 번호 생성하기</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="menu_btn">
+        <span>메뉴</span>
+      </div>
+    </div>
+
     <main>
       <div class="main_container">
         <div class="lotto_machine_container">
-          <img class="lotto_machine" src="img/lotto_machine.png" />
+          <img class="lotto_machine" src="images/lotto_machine.png" />
         </div>
         <div class="btn_container">
           <button type="button" class="num_generate_btn btn_lite">
@@ -85,7 +122,7 @@
           </table>
         </div>
         <br>
-        <h4>친구에게 공유하기</h4>
+        <!-- <h4>친구에게 공유하기</h4>
         <div class="share_container">
           <div class="share_content">
             <a id="btnTwitter" class="link-icon twitter" href="javascript:shareTwitter();" ><img src="img/icon-twitter.png"></a>
@@ -96,12 +133,60 @@
           <div class="share_content">
             <a id="btnKakao" class="link-icon kakao" href="javascript:shareKakao();"><img src="img/icon-kakao.png"></a>  
           </div>
-        </div>
+        </div> -->
+      </div>
+    </main>
 
-        
+
+    <!-- footer -->
+    <footer>
+      <h4>Share To</h4>
+      <div class="share_container">
+        <div class="share_content">
+          <a
+            id="btnTwitter"
+            class="link-icon twitter"
+            href="javascript:shareTwitter();"
+            ><img src="images/icon-twitter.png"
+          /></a>
+        </div>
+        <div class="share_content">
+          <a
+            id="btnFacebook"
+            class="link-icon facebook"
+            href="javascript:shareFacebook();"
+            ><img src="images/icon-facebook.png"
+          /></a>
+        </div>
+        <div class="share_content">
+          <a
+            id="btnKakao"
+            class="link-icon kakao"
+            href="javascript:shareKakao();"
+            ><img src="images/icon-kakao.png"
+          /></a>
+        </div>
+        <div class="share_content">
+          <span class="naver_btn" onclick="shareNaver()">
+            <script
+              type="text/javascript"
+              src="https://ssl.pstatic.net/share/js/naver_sharebutton.js"
+            ></script>
+            <script type="text/javascript">
+              new ShareNaver.makeButton({ type: "e" });
+            </script>
+          </span>
+        </div>
       </div>
 
-    </main>
+      <div class="copyright">
+        <p>© 2024. M.Labs. all rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="common.js"></script>
+  </body>
+</html>
 
     <script src="lotto.js"></script>
   </body>

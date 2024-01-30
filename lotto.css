@@ -1,5 +1,6 @@
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
 
+/* common css */
 * {
   margin: 0;
   padding: 0;
@@ -10,10 +11,15 @@
 }
 
 /* nav */
-.nav_bar {
+nav {
+  position: fixed;
   width: 100%;
   height: 80px;
-  color: white !important;
+  color: white;
+  background-color: #609fd6;
+  border-bottom: 1px solid #609fd6;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2); /* 그림자 설정 */
+  transition: all 0.2s ease-in;
 }
 nav.nav_lite {
   background-color: #609fd6;
@@ -112,7 +118,6 @@ body.dark {
 /* main */
 main {
   width: 100%;
-
   display: flex;
   justify-content: center;
 }
@@ -122,6 +127,195 @@ main {
   align-items: center;
 
 }
+
+/* menu */
+#Accordion_wrap{
+  position: relative;
+  z-index: 11;
+  color: black;
+  top:80px;
+  height: 10px;
+}
+.menu_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0);
+  background-color: white;
+  width: 100px;
+  height: 20px;
+  padding: 8px 0;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top:1px;
+  border: 1px solid rgb(195, 195, 195);
+  border-top-style: none;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-shadow: 0 0 16px 0px rgba(0 0 0 / 15%);
+  transition: all 0.2s ease;
+}
+
+.menu_btn.menu_btn_dark{
+  background-color: #3a3a3a;
+  color:white;
+  transition: all 0.2s ease;
+  border-style: none;
+}
+.menu_btn.on > span {
+  font-weight: bold;
+  color: #006633;
+}
+.menu {
+  height: 0;
+  overflow: hidden;
+  font-size: 14px;
+  background-color: white;
+  box-shadow: 0 0 10px 0px rgba(0 0 0 / 15%);
+  transition: all 0.2s ease; /* 슬라이드 업/다운 효과를 위한 트랜지션 추가 */
+}
+.menu.open{
+  height: 250px;
+}
+.menu.menu_dark{
+  background-color: #3a3a3a;
+  color: white;
+  transition: all 0.2s ease;
+}
+.menu_container{
+  height: 210px;
+  margin: 20px 0;
+  padding: 0 20px;
+}
+.menu_content{
+  float: inline-start;
+  display: inline-block;
+  width: 20%;
+}
+
+.menu_content ul li{
+  list-style-type:none;
+  margin: 5px 0;
+}
+.menu_container .content_type{
+  font-weight: 600;
+  font-size: 15px;
+  margin-bottom: 15px;
+}
+@media screen and (max-width: 768px) {
+
+  .menu.open{
+    position: relative;
+    height: 350px;
+    overflow: scroll;
+    z-index: 10;
+  }
+  .menu_container {
+    margin: 0;
+    padding: 0;
+    height: calc(100vh - 120px);
+  }
+  .menu_content{
+    width: 100%;
+    transition: all 0.2s ease;
+  }
+  .menu_content ul li, .menu_content p{
+    margin: 0 !important;
+    padding: 5px 0 !important;
+    border-bottom: 1px solid lightgray;
+  }
+  .menu_content ul{
+    display: none;
+  }
+  .menu_content ul.content_open{
+    display: block;
+  }
+
+}
+
+/* footer */
+footer {
+  display: flex;
+
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 170px;
+  background-color: rgb(227, 227, 227);
+  transition: all 0.2s ease-in;
+}
+footer.footer_dark {
+  background-color: #2b2b2b;
+  transition: all 0.2s ease-in;
+}
+
+footer h4 {
+  color: rgb(149, 149, 149);
+}
+
+.share_container {
+  display: flex;
+  align-items: center;
+}
+.share_content {
+  display: flex;
+  justify-content: center;
+}
+.link-icon {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 60px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  padding: 20px 0 20px 0;
+  z-index: 1;
+}
+.link-icon.twitter {
+  background-repeat: no-repeat;
+}
+.link-icon.facebook {
+  background-repeat: no-repeat;
+}
+.link-icon.kakao {
+  background-repeat: no-repeat;
+}
+
+.naver_btn {
+  position: relative;
+  width: 60px;
+  height: 40px;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.naver_btn a {
+  width: 0;
+  height: 0;
+}
+#naver {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.copyright {
+  color: rgb(162, 162, 162);
+}
+
+/* common css end */
+
+
+
 
 /* button */
 .btn_container {
@@ -181,10 +375,22 @@ main {
   height: 30px;
   background-color: #c6d7e6;
   border-radius: 5px 5px 0 0;
+  transition: all 0.2s ease-in;
+}
+.top_bg.top_bg_dark{
+  color: white;
+  background-color: #3a3a3a;
+  transition: all 0.2s ease-in;
 }
 .top_bg span {
   color: rgb(52, 96, 158);
   font-weight: 600;
+  transition: all 0.2s ease-in;
+
+}
+.top_bg span.span_dark {
+  color:white;
+  transition: all 0.2s ease-in;
 }
 .lotto_num_container {
   display: flex;
@@ -192,6 +398,10 @@ main {
   margin: 0 0 10px 0;
   border: 1px solid #cecece;
   border-radius: 0 0 5px 5px;
+}
+.lotto_num_container.lotto_num_container_dark {
+  border-color: #3a3a3a;
+  transition: all 0.2s ease-in;
 }
 .lotto_num_wrap {
   display: flex;
@@ -295,8 +505,30 @@ main {
   border: 1px solid #c6d7e6;
   text-align: center;
   height: 30px;
+  transition: all 0.2s ease-in;
 }
-
+th.th_dark, td.td_dark{
+  border-color: #3a3a3a;
+  transition: all 0.2s ease-in;
+}
+th.th_dark{
+  background-color: #3a3a3a !important;
+}
 .rule_table th{
   background-color: #c6d7e6;
+}
+
+@media screen and (max-width:520px) {
+  .rule_table{
+    width: 330px;
+  }
+}
+
+@media screen and (max-width:321px) {
+  .rule_table{
+    width: 300px;
+  }
+  .lotto_container{
+    width: 300px;
+  }
 }

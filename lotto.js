@@ -9,6 +9,16 @@ const LottogenerateBtn = document.querySelector(".num_generate_btn");
 const lottoNumWrap = document.querySelectorAll(".lotto_num_wrap");
 const lottoNum = document.querySelectorAll(".lotto_num");
 
+const generateTxtDiv = document.querySelector(".top_bg");
+const lottoNumContainer = document.querySelector(".lotto_num_container");
+const topBgSpan = document.querySelector(".top_bg span");
+const th = document.querySelectorAll("table tr th");
+const td = document.querySelectorAll("table tr td");
+
+const footer = document.querySelector("footer");
+const menuBtn = document.querySelector(".menu_btn");
+const menu = document.querySelector(".menu");
+
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
@@ -19,7 +29,7 @@ toggleList.forEach(($toggle) => {
 
     if (isActive) {
       $toggle.classList.remove("active");
-      toggleImg.setAttribute("src", "img/sun.png");
+      toggleImg.setAttribute("src", "images/sun.png");
       body.classList.remove("dark");
       body.classList.add("lite");
 
@@ -28,9 +38,23 @@ toggleList.forEach(($toggle) => {
 
       LottogenerateBtn.classList.remove("btn_dark");
       LottogenerateBtn.classList.add("btn_lite");
+
+      generateTxtDiv.classList.remove("top_bg_dark");
+      lottoNumContainer.classList.remove("lotto_num_container_dark");
+      topBgSpan.classList.remove("span_dark");
+      for(item of th){
+        item.classList.remove("th_dark");
+      }
+      for(item of td){
+        item.classList.remove("td_dark");
+      }
+
+      menuBtn.classList.remove("menu_btn_dark");
+      menu.classList.remove("menu_dark");
+      footer.classList.remove("footer_dark");
     } else {
       $toggle.classList.add("active");
-      toggleImg.setAttribute("src", "img/moon.png");
+      toggleImg.setAttribute("src", "images/moon.png");
       body.classList.remove("lite");
       body.classList.add("dark");
 
@@ -39,6 +63,20 @@ toggleList.forEach(($toggle) => {
 
       LottogenerateBtn.classList.remove("btn_lite");
       LottogenerateBtn.classList.add("btn_dark");
+
+      generateTxtDiv.classList.add("top_bg_dark");
+      lottoNumContainer.classList.add("lotto_num_container_dark");
+      topBgSpan.classList.add("span_dark");
+      for(item of th){
+        item.classList.add("th_dark");
+      }
+      for(item of td){
+        item.classList.add("td_dark");
+      }
+
+      menuBtn.classList.add("menu_btn_dark");
+      menu.classList.add("menu_dark");
+      footer.classList.add("footer_dark");
     }
   };
 });
@@ -129,3 +167,91 @@ function shareKakao() {
     }
   });
 }
+function shareNaver() {
+  let url = "https://lotto-generate.netlify.app/";
+  let title = "로또번호생성기";
+  let shareURL = "https://share.naver.com/web/shareView?url=" + url + "&title=" + title;
+  document.location = shareURL;
+}
+
+
+// common.js
+var isMenuOpened = false;
+var isContentOpened = false;
+var browserWidth = window.innerWidth;
+let contentType = document.querySelectorAll(".content_type");
+
+document.addEventListener("DOMContentLoaded", function () {
+  let menuBtn = document.querySelector(".menu_btn");
+
+  menuBtn.addEventListener("click", function () {
+    let menu = document.querySelector(".menu");
+    slideToggle(menu);
+  });
+
+  contentType.forEach(function(item) {
+    item.addEventListener("click", function() {
+      let list = item.parentNode.querySelector(".content_list");
+      slideList(list);
+    });
+  });
+
+});
+
+function slideToggle(menu) {
+  if (isMenuOpened) {
+    menu.classList.remove("open");
+    isMenuOpened = false;
+  } else {
+    menu.classList.add("open");
+    isMenuOpened = true;
+  }
+}
+
+function slideList(list){
+  let span = list.parentNode.querySelector("span");
+  if(isContentOpened){
+    list.classList.remove("content_open");
+    isContentOpened = false;
+    if (window.innerWidth <= 768) {
+      span.textContent = "↓";   
+    }
+  } else{
+    list.classList.add("content_open");
+    isContentOpened = true;
+    if (window.innerWidth <= 768) {
+      span.textContent = "↑";   
+    }
+  }
+
+}
+
+// browserWidth 변화에 따른 content arrow 추가 및 제거
+function handleResize() {
+  let isSpan = document.querySelector(".arrow");
+  if (window.innerWidth <= 768) {
+    contentType.forEach(function(item) {
+      if(!isSpan){
+        let arrow = document.createElement("span");
+        arrow.classList.add("arrow")
+        arrow.style.float = "right"
+        arrow.style.paddingRight = "3px"
+        arrow.textContent = "↓";   
+        item.appendChild(arrow);
+      }
+    });
+  } else{
+    if(isSpan){
+      contentType.forEach(function(item) {
+        let arrow = item.querySelector(".arrow");
+        item.removeChild(arrow);
+      });
+    }
+  }
+}
+
+  // 초기 로딩 시에도 한 번 실행
+  handleResize();
+  
+  // 브라우저 크기가 변할 때마다 실행
+  window.addEventListener("resize", handleResize);
